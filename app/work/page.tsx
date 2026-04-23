@@ -101,26 +101,28 @@ const STUDIES: Study[] = [
   },
   {
     num: "04",
-    category: "Community · Platform",
+    category: "Marketing Cloud · Integration",
     year: "2024",
-    title: "ThreadTalk — focused topic-based discussions.",
+    title: "SFMC Journey Builder → Slack custom activity.",
     summary:
-      "A community discussion platform that prioritizes thread depth over feed velocity — built for groups that want signal, not scroll.",
+      "A custom Journey Builder activity that pushes contact-level events from Salesforce Marketing Cloud directly into Slack channels in real time — installed as a first-class drag-and-drop step inside Journey Builder.",
     problem:
-      "General-purpose social platforms reward outrage and recency. Knowledge communities lose their best contributors to noise.",
+      "Marketing ops needed Slack alerts when contacts hit specific points in a journey (form submits, churn risk, high-value triggers). The default SFMC stack has no native Slack step, and exporting to a middleware tool added latency and a paid hop the team didn't want.",
     approach:
-      "Topic-first navigation with structured threads, contributor reputation tied to peer endorsement, and zero algorithmic ordering by default.",
+      "Built a self-hosted Node.js custom activity exposing the four Journey Builder lifecycle endpoints (save, validate, publish, execute), registered it in SFMC Installed Packages with the right scopes, and wired execute() to fan contact data out through Slack Incoming Webhooks with channel + message templating configured per journey step.",
     architecture: [
-      "Topic graph with moderator-curated taxonomy",
-      "Thread model with parent / reply / endorsement edges",
-      "Reputation system computed nightly from peer signals",
-      "Search built on Postgres full-text + topic filters",
+      "Node.js / Express API hosting the custom activity UI (config.json + HTML config screen) and the four lifecycle endpoints",
+      "Lifecycle endpoints implemented: /save, /validate, /publish, /execute — /execute receives the contact payload from Journey Builder at runtime",
+      "Activity registered in SFMC Setup → Installed Packages with a Journey Builder Activity component pointing at the hosted endpoint URLs",
+      "JWT verification on incoming requests using the package's signing secret to confirm calls actually originate from SFMC",
+      "Per-step config (Slack webhook URL, channel, message template with merge fields) persisted in the activity's inArguments and replayed on every contact",
+      "Slack delivery via Incoming Webhooks with templated blocks; failures surfaced back to Journey Builder via non-200 responses for retry",
     ],
-    stack: ["React", "Django", "PostgreSQL"],
+    stack: ["SFMC", "Journey Builder", "Node.js", "Express", "Slack Webhooks", "JWT"],
     outcome: [
-      { k: "Beta communities", v: "5" },
-      { k: "Avg. thread depth", v: "8 replies" },
-      { k: "Status", v: "Pilot" },
+      { k: "Lifecycle endpoints", v: "4 / 4" },
+      { k: "Alert latency", v: "<2s" },
+      { k: "Status", v: "In production" },
     ],
   },
 ];
