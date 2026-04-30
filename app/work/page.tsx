@@ -23,6 +23,7 @@ type Study = {
   architecture: string[];
   stack: string[];
   outcome: { k: string; v: string }[];
+  deepDive?: { href: string; label: string };
 };
 
 const STUDIES: Study[] = [
@@ -124,6 +125,10 @@ const STUDIES: Study[] = [
       { k: "Alert latency", v: "<2s" },
       { k: "Status", v: "In production" },
     ],
+    deepDive: {
+      href: "/sfmc-custom-activity-tutorial",
+      label: "Read the full SFMC custom activity tutorial",
+    },
   },
 ];
 
@@ -221,6 +226,22 @@ function CaseStudyDeep({ study }: { study: Study }) {
               ))}
             </div>
           </div>
+          {study.deepDive && (
+            <div className="rounded-xl border hairline bg-[var(--surface-subtle)] p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <span className="num-mark">Deep dive</span>
+                  <p className="mt-1 text-sm text-foreground/85">{study.deepDive.label}</p>
+                </div>
+                <Link
+                  href={study.deepDive.href}
+                  className="link-underline inline-flex items-center gap-1.5 text-sm font-medium"
+                >
+                  See more <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </article>

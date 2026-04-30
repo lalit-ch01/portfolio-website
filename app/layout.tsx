@@ -7,6 +7,7 @@ import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lalitchaudhari.dev"),
   title: "Lalit Chaudhari — AI Engineer & Full Stack Developer",
   description:
     "Lalit Chaudhari builds AI-powered systems and scalable web products — RAG pipelines, LLM workflows, and full-stack SaaS.",
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
     title: "Lalit Chaudhari — AI Engineer & Full Stack Developer",
     description: "AI Engineer specializing in RAG, LLM orchestration, and full-stack SaaS development.",
     type: "website",
+    url: "https://lalitchaudhari.dev",
+    siteName: "Lalit Chaudhari",
   },
   twitter: {
     card: "summary_large_image",

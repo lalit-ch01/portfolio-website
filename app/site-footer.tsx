@@ -36,17 +36,17 @@ export function SiteFooter() {
           <h3 className="num-mark mb-4">Connect</h3>
           <ul className="space-y-2.5 text-sm">
             <li>
-              <a href="mailto:hello@lalitchaudhari.dev" className="inline-flex items-center gap-2 text-foreground/80 hover:text-foreground">
-                <Mail className="h-3.5 w-3.5" /> hello@lalitchaudhari.dev
+              <a href="mailto:lalit04chaudhari@gmail.com" className="inline-flex items-center gap-2 text-foreground/80 hover:text-foreground">
+                <Mail className="h-3.5 w-3.5" /> lalit04chaudhari@gmail.com
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-foreground/80 hover:text-foreground">
+              <a href="https://www.linkedin.com/in/lalit-chaudhari-553a4332b/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-foreground/80 hover:text-foreground">
                 <Linkedin className="h-3.5 w-3.5" /> LinkedIn
               </a>
             </li>
             <li>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-foreground/80 hover:text-foreground">
+              <a href="https://github.com/lalit-ch01" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-foreground/80 hover:text-foreground">
                 <Github className="h-3.5 w-3.5" /> GitHub
               </a>
             </li>
