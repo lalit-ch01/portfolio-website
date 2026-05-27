@@ -57,16 +57,18 @@ export default function RootLayout({
             gtag('config', 'G-1V5FM33XCL');
           `}
         </Script>
-        <Script id="smartlook" strategy="afterInteractive">
-          {`
-            window.smartlook||(function(d) {
-              var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-              var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-              c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
-            })(document);
-            smartlook('init', '6eeab182043f82f723fd1c3bf2f91daea2253a8a', { region: 'eu' });
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.smartlook||(function(d) {
+                var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+                var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+                c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+              })(document);
+              smartlook('init', '6eeab182043f82f723fd1c3bf2f91daea2253a8a', { region: 'eu' });
+            `,
+          }}
+        />
       </head>
       <body>
         <div className="flex min-h-screen flex-col bg-background text-foreground">
