@@ -10,36 +10,17 @@ type Route = {
 };
 
 const ROUTES: Route[] = [
-  { path: "/", changeFrequency: "monthly", priority: 1.0 },
-  { path: "/work", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/services", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/about", changeFrequency: "yearly", priority: 0.6 },
-  { path: "/contact", changeFrequency: "yearly", priority: 0.5 },
+  { path: "/", changeFrequency: "weekly", priority: 1.0 },
+  { path: "/work", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/services", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/about", changeFrequency: "weekly", priority: 0.6 },
+  { path: "/contact", changeFrequency: "weekly", priority: 0.5 },
 
-  {
-    path: "/sfmc-custom-activity-tutorial",
-    changeFrequency: "monthly",
-    priority: 0.9,
-    lastModified: new Date("2026-05-01"),
-  },
-  {
-    path: "/creating-sfmc-journey-builder-custom-activity",
-    changeFrequency: "monthly",
-    priority: 0.7,
-    lastModified: new Date("2026-05-01"),
-  },
-  {
-    path: "/sfmc-journey-builder-custom-activity",
-    changeFrequency: "monthly",
-    priority: 0.7,
-    lastModified: new Date("2026-05-01"),
-  },
-  {
-    path: "/sfmc-journey-builder-custom-activity-for-slack",
-    changeFrequency: "monthly",
-    priority: 0.7,
-    lastModified: new Date("2026-05-01"),
-  },
+  { path: "/work/n8n-ai-sales-pipeline-hubspot-automation", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/sfmc-custom-activity-tutorial", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/creating-sfmc-journey-builder-custom-activity", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/sfmc-journey-builder-custom-activity", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/sfmc-journey-builder-custom-activity-for-slack", changeFrequency: "weekly", priority: 0.7 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

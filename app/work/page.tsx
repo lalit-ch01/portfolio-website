@@ -78,27 +78,33 @@ const STUDIES: Study[] = [
   },
   {
     num: "03",
-    category: "SaaS Product",
-    year: "2024",
-    title: "BrainBench — adaptive aptitude learning.",
+    category: "Automation · AI Sales Pipeline",
+    year: "2026",
+    title: "n8n AI sales pipeline — lead capture to outreach, fully automated.",
     summary:
-      "An aptitude prep platform built around mastery — not question count. Tracks per-skill scoring on a topic graph and serves the next test you actually need.",
+      "A production-grade sales pipeline built in n8n that turns inbound leads into enriched, qualified, personally-emailed prospects — and keeps the whole funnel visible in HubSpot without manual data entry.",
     problem:
-      "Existing aptitude tools optimize for grinding. Students hit plateaus they can't see, so they drill the same topic instead of the next one.",
+      "Marketing teams were losing high-intent leads to slow, manual triage. Enrichment lived in one tool, the CRM in another, outreach in a third. By the time a salesperson saw a fresh inquiry, the moment had passed and the first message was always generic.",
     approach:
-      "Modeled topics as a directed graph with prerequisites. Per-skill scores update with every attempt; the engine selects the next test set from the frontier of weakest skills with at-risk dependencies.",
+      "Modeled the entire funnel as a single n8n workflow — webhook ingestion, AI-driven enrichment and qualification, HubSpot CRM sync, and LLM-generated personalized outreach — with retry handling, structured logging, and validation at every step so the pipeline survives real production load.",
     architecture: [
-      "Topic graph with weighted edges for prerequisite strength",
-      "Per-skill score model updated via Bayesian smoothing",
-      "Test composer pulls from question bank balanced by skill targets",
-      "React frontend with progress visualisations students actually understand",
+      "n8n webhook trigger fires on every new lead submission and validates the payload before anything else runs",
+      "Enrichment step pulls company and contact data from external APIs, then an LLM scores intent, business relevance, and engagement potential",
+      "Qualified leads are pushed into HubSpot CRM — contact records, deal stages, and activity logs created automatically with no manual entry",
+      "AI generates personalized email sequences using the enriched profile; stage-aware drip campaigns are triggered based on lead behavior",
+      "Follow-up reminders, engagement tracking, and high-priority sales-team notifications routed through the same workflow",
+      "Modular sub-workflows with retries, structured logs, and input validation — designed for real-world ops, not demos",
     ],
-    stack: ["React", "Django", "PostgreSQL", "REST"],
+    stack: ["n8n", "HubSpot", "OpenAI", "Webhooks", "REST APIs"],
     outcome: [
-      { k: "Question bank", v: "1,500+" },
-      { k: "Test types", v: "12" },
-      { k: "Status", v: "In production" },
+      { k: "Manual sales ops", v: "Reduced" },
+      { k: "Lead response time", v: "Near-instant" },
+      { k: "Pipeline tracking", v: "Fully automated" },
     ],
+    deepDive: {
+      href: "/work/n8n-ai-sales-pipeline-hubspot-automation",
+      label: "Read the full n8n + HubSpot AI sales pipeline case study",
+    },
   },
   {
     num: "04",
@@ -139,7 +145,7 @@ export default function WorkPage() {
         <div className="container-page py-20 md:py-28">
           <span className="eyebrow">Work</span>
           <h1 className="mt-4 max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-            Systems I've shipped — explained the way I'd explain them in an interview.
+            Systems I've shipped — from AI pipelines to full-stack products.
           </h1>
           <p className="mt-5 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
             Each case study covers the problem, the approach, the architecture, and the outcome.

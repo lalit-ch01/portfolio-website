@@ -19,7 +19,10 @@ export default function ContactPage() {
     <>
       <header className="border-b hairline" style={{ background: "var(--gradient-hero)" }}>
         <div className="container-page py-20 md:py-28">
-          <span className="eyebrow">Contact</span>
+          <div className="flex items-center gap-3">
+            <span className="eyebrow">Contact</span>
+            <span className="pill-dot" aria-hidden />
+          </div>
           <h1 className="mt-4 max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
             Let's build something impactful.
           </h1>
@@ -37,30 +40,30 @@ export default function ContactPage() {
               <ContactRow
                 icon={Mail}
                 label="Email"
-                value="hello@lalitchaudhari.dev"
-                href="mailto:hello@lalitchaudhari.dev"
+                value="lalit04chaudhari@gmail.com"
+                href="mailto:lalit04chaudhari@gmail.com"
               />
               <ContactRow
                 icon={Linkedin}
                 label="LinkedIn"
-                value="/in/lalitchaudhari"
-                href="https://www.linkedin.com"
+                value="/in/lalit-chaudhari"
+                href="https://www.linkedin.com/in/lalit-chaudhari-553a4332b/"
               />
               <ContactRow
                 icon={Github}
                 label="GitHub"
-                value="@lalitchaudhari"
-                href="https://github.com"
+                value="@lalit-ch01"
+                href="https://github.com/lalit-ch01"
               />
 
-              <div className="panel p-6">
+              {/* <div className="panel p-6">
                 <div className="num-mark">Response time</div>
                 <p className="mt-2 text-sm text-foreground/90">
                   Within 48 hours, Mon–Fri. If it's urgent, mention it in the subject line.
                 </p>
                 <div className="num-mark mt-5">Time zone</div>
                 <p className="mt-2 text-sm text-foreground/90">IST (UTC+5:30) · flexible for calls</p>
-              </div>
+              </div> */}
             </div>
           </aside>
 
@@ -79,7 +82,7 @@ export default function ContactPage() {
             Mention it in your message and I'll send a calendar link with the next available slots.
           </p>
           <a
-            href="mailto:hello@lalitchaudhari.dev?subject=Intro%20call"
+            href="mailto:lalit04chaudhari@gmail.com?subject=Intro%20call"
             className="btn-ghost mt-6"
           >
             Email me directly <ArrowUpRight className="h-4 w-4" />

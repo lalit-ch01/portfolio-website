@@ -40,6 +40,7 @@ const STACK = [
   { group: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind"] },
   { group: "Backend", items: ["Django", "FastAPI", "PostgreSQL", "Celery", "REST"] },
   { group: "Marketing Cloud", items: ["SFMC", "Journey Builder", "AMPscript", "SSJS"] },
+  { group: "Automation", items: ["n8n", "HubSpot", "Webhooks", "REST APIs"] },
   { group: "Infra", items: ["Vercel", "Docker", "GitHub Actions", "Linux"] },
 ];
 

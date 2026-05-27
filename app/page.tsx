@@ -91,10 +91,10 @@ app = graph.compile(checkpointer=PostgresSaver()){"\n"}
 /* ---------------- 2. CREDIBILITY ---------------- */
 function Credibility() {
   const items = [
-    { k: "Industry experience", v: "CloudCove.ai" },
+    { k: "Industry experience", v: "CloudCove.ai | Agnotic Technologies" },
     { k: "AI systems shipped", v: "RAG · LangGraph · CrewAI" },
-    { k: "SaaS products built", v: "BrainBench · ProjTrack" },
-    { k: "Stack depth", v: "React · Django · SFMC" },
+    { k: "SaaS products built", v: "ProjTrack Desk" },
+    { k: "Stack depth", v: "React · Django · SFMC · n8n" },
   ];
   return (
     <section className="border-y hairline bg-[var(--surface-subtle)]">
@@ -137,12 +137,13 @@ function Capabilities() {
     },
     {
       icon: Workflow,
-      title: "Marketing Automation",
-      lead: "Salesforce Marketing Cloud — beyond the standard activity catalogue.",
+      title: "Marketing & Workflow Automation",
+      lead: "Salesforce Marketing Cloud and n8n — beyond the standard activity catalogue.",
       bullets: [
         "Custom Journey Builder activities",
         "AMPscript & SSJS campaign systems",
         "Data extension architecture & integrations",
+        "n8n workflows for lead capture, AI enrichment & HubSpot sync",
       ],
     },
   ];
@@ -235,16 +236,16 @@ function SelectedWork() {
             ]}
           />
           <CaseStudy
-            tag="SaaS Product"
-            year="2024"
-            title="BrainBench — structured aptitude learning that actually adapts."
-            problem="Aptitude prep tools optimize for question count, not mastery. Students grind without ever seeing where they're plateauing."
-            approach="Topic graph + per-skill scoring, adaptive test sets, and a clean React + Django stack designed to scale beyond a single college."
-            stack={["React", "Django", "REST", "PostgreSQL"]}
+            tag="Automation · AI Sales Pipeline"
+            year="2026"
+            title="n8n AI sales pipeline — lead capture to outreach, fully automated."
+            problem="Marketing teams were losing high-intent leads to slow, manual triage. Enrichment, CRM, and outreach lived in three different tools — so first replies were always late and always generic."
+            approach="Single n8n workflow handling webhook ingestion, AI-driven enrichment and qualification, HubSpot CRM sync, and LLM-generated personalized outreach — with retries, logging, and validation at every step."
+            stack={["n8n", "HubSpot", "OpenAI", "Webhooks", "REST APIs"]}
             metrics={[
-              { k: "Question bank", v: "1,500+" },
-              { k: "Test types", v: "12" },
-              { k: "In production", v: "Yes" },
+              { k: "Manual sales ops", v: "Reduced" },
+              { k: "Lead response", v: "Near-instant" },
+              { k: "Pipeline tracking", v: "Automated" },
             ]}
           />
         </div>
